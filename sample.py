@@ -12,7 +12,8 @@ spark = SparkSession\
 
 #start から end までのjsonlファイルを読み込んでDataFrameを返す
 def metadata(spark, start, end):
-    df = reduce(lambda d, acc: d.union(acc), [spark.read.json('meta/{0:04d}.jsonl'.format(i)) for i in range(start, end)])
+    df = reduce(lambda acc, d: acc.union(d),
+            [spark.read.json('/user/seitaro-t/meta/{0:04d}.jsonl'.format(i)) for i in range(start, end)])
     return df
 
 df = metadata(spark, 1, 100)
