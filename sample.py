@@ -10,14 +10,14 @@ spark = SparkSession\
         .config('master', 'yarn')\
         .getOrCreate()
 
-#start から end までのjsonlファイルを読み込んでDataFrameを返す
-def metadata(spark, start, end):
-    df = reduce(lambda acc, d: acc.union(d),
-            [spark.read.json('/user/seitaro-t/meta/{0:04d}.jsonl'.format(i)) for i in range(start, end)])
-    return df
+#メタデータを読む
+df = spark.read.json('/user/seitaro-t/meta/*.jsonl')
 
-df = metadata(spark, 1, 100)
-
+#スキーマの表示
 df.printSchema()
+
+#先頭の5件を表示
 df.show(5)
+
+#件数を表示
 print(df.count())
