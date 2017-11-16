@@ -1,3 +1,4 @@
+#coding: utf-8
 #スキーマ表示するだけ
 from pyspark.sql import SparkSession
 
