@@ -1,0 +1,23 @@
+/opt/cloudera/parcels/SPARK2-2.0.0.cloudera2-1.cdh5.7.0.p0.118100/lib/spark2/python/lib/pyspark.zip/pyspark/sql/context.py:487: DeprecationWarning: HiveContext is deprecated in Spark 2.0.0. Please use SparkSession.builder.enableHiveSupport().getOrCreate() instead.
+root
+ |-- category: string (nullable = true)
+ |-- comment_num: long (nullable = true)
+ |-- description: string (nullable = true)
+ |-- file_type: string (nullable = true)
+ |-- length: long (nullable = true)
+ |-- mylist_num: long (nullable = true)
+ |-- size_high: long (nullable = true)
+ |-- size_low: long (nullable = true)
+ |-- tags: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- title: string (nullable = true)
+ |-- upload_time: long (nullable = true)
+ |-- video_id: string (nullable = true)
+ |-- watch_num: long (nullable = true)
+
+root
+ |-- command: string (nullable = true)
+ |-- content: string (nullable = true)
+ |-- date: long (nullable = true)
+ |-- vpos: long (nullable = true)
+
